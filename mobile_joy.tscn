@@ -1,0 +1,30 @@
+[gd_scene load_steps=4 format=3 uid="uid://b00kocc2ncgmx"]
+
+[ext_resource type="Script" path="res://mobile_joy.gd" id="1_0uucj"]
+
+[sub_resource type="SphereMesh" id="SphereMesh_u1swe"]
+radius = 50.0
+height = 100.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_xqueb"]
+radius = 15.0
+height = 30.0
+
+[node name="CanvasLayer" type="CanvasLayer"]
+
+[node name="Mobile_Joy" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_0uucj")
+
+[node name="out_joy" type="MeshInstance2D" parent="Mobile_Joy"]
+modulate = Color(0.415686, 0.419608, 0.419608, 1)
+mesh = SubResource("SphereMesh_u1swe")
+
+[node name="in_joy" type="MeshInstance2D" parent="Mobile_Joy"]
+modulate = Color(0.180392, 0.180392, 0.180392, 1)
+mesh = SubResource("SphereMesh_xqueb")
